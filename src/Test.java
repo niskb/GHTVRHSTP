@@ -3,10 +3,17 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.Scanner;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerConfigurationException;
+import javax.xml.transform.TransformerException;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -50,8 +57,18 @@ public class Test {
 
 		// We need to parse each file XML
 
-		parser();
-
+//		parser();
+		
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("Negative values for slower Highway speed.");
+		System.out.println("Positive values for faster Highway speed.");
+		System.out.println("You probably want to input a positive value to increase the Highway speed.");
+		System.out.println("Anything beyond 200 is dangerous.");
+		System.out.println("Enter percentage Integer (-100 through 100): ");
+		int percentageInput = scanner.nextInt();
+		parseAllByPercent(percentageInput);
+		scanner.close();
+		
 	}
 
 	private static void printFileName(File file, int level) {
@@ -171,6 +188,54 @@ public class Test {
 		} catch (IOException e) {
 			e.printStackTrace();
 			System.out.println("Fail");
+		}
+	}
+	
+	private static void parseAllByPercent(int percent) {
+		for(int i = 0; i < directories.length; i++) {
+			DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+			DocumentBuilder builder;
+			try {
+				builder = factory.newDocumentBuilder();
+				File file = new File(directories[0]);
+				Document doc = builder.parse(file);
+				doc.getDocumentElement().normalize();
+				
+				// Get Track element
+				NodeList children = doc.getChildNodes();
+				Element trackElement = (Element) children.item(0);
+				
+				// Get Track Highway Child element
+				NodeList trackChildren = trackElement.getChildNodes();
+				Element highwayElement = (Element) trackChildren.item(1);
+				
+				// Modify Element Highway Speed
+				highwayElement.setAttribute("newbeginner", String.valueOf((percent/100.0) + 1));
+				highwayElement.setAttribute("neweasy", String.valueOf((percent/100.0) + 1));
+				highwayElement.setAttribute("newmedium", String.valueOf((percent/100.0) + 1));
+				highwayElement.setAttribute("newhard", String.valueOf((percent/100.0) + 1));
+				highwayElement.setAttribute("newexpert", String.valueOf((percent/100.0) + 1));
+				
+				// Now recompile XML to a new File with the new data
+				String newFileDirectoryPath = directories[0].replaceAll("TRACKS_CLEAN", "TRACKS");
+				newFileDirectoryPath = newFileDirectoryPath.substring(newFileDirectoryPath.indexOf("OVERRIDE\\TRACKS"));
+				
+				System.out.println("Writing to: " + newFileDirectoryPath);
+				
+				// Now actually write the modified XML to a new File
+				
+				
+
+			} catch (ParserConfigurationException e) {
+				e.printStackTrace();
+				System.out.println("Fail");
+			} catch (SAXException e) {
+				e.printStackTrace();
+				System.out.println("Fail");
+			} catch (IOException e) {
+				e.printStackTrace();
+				System.out.println("Fail");
+			}
 		}
 	}
 }
