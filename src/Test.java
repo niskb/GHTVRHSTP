@@ -10,7 +10,6 @@ import javax.xml.parsers.ParserConfigurationException;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
-import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
@@ -155,6 +154,13 @@ public class Test {
 
 			String newexpert = highwayElement.getAttribute("newexpert");
 			System.out.println("newexpert: " + newexpert);
+			
+			// Modify Element
+			highwayElement.setAttribute("newexpert", "2.0");
+			
+			newexpert = highwayElement.getAttribute("newexpert");
+			System.out.println("Modified newexpert: " + newexpert);
+			
 
 		} catch (ParserConfigurationException e) {
 			e.printStackTrace();
