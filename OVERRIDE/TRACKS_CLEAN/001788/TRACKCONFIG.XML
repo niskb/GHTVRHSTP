@@ -1,0 +1,61 @@
+﻿<Track
+  id="001788"
+  artist="Black Veil Brides"
+  trackname="Fallen Angels (Live)"
+  countInDurationBars="1">
+  <Video
+    hasVideo="false"
+    musicStartTime="0" />
+  <!-- highwayOpacityMultiplier: You can have values between 0.0 - FLT_MAX (2^(2^7) = 3.4 x 10^38)
+			 Any value < 1.0 should make the highway MORE TRANSPARENT. 
+			 Any value > 1.0 should make the highway LESS TRANSPARENT -->
+  <Highway
+    newbeginner="0.4"
+    neweasy="0.55"
+    newmedium="0.75"
+    newhard="0.9"
+    newexpert="1.2"
+    highwayOpacityMultiplier="1.0"
+    highwayTransparency="0.5" />
+  <CustomModel
+    ArrayModel="Models/highway_3ln_led_zep.xmf"
+    TraditionalModel="Models/highway_5ln_ledzep.xmf" />
+  <Light
+    index="0"
+    PosX="120.0f"
+    PosY="70.0f"
+    PosZ="280.0f"
+    ColR="0.635f"
+    ColG="0.925f"
+    ColB="0.925f" />
+  <Light
+    index="1"
+    PosX="50.0f"
+    PosY="90.0f"
+    PosZ="-50.0f"
+    ColR="0.635f"
+    ColG="0.925f"
+    ColB="0.925f" />
+  <Light
+    index="2"
+    PosX="0.0f"
+    PosY="70.0f"
+    PosZ="-30.0f"
+    ColR="0.757f"
+    ColG="0.682f"
+    ColB="0.588f" />
+  <Light
+    index="3"
+    PosX="500.0f"
+    PosY="500.0f"
+    PosZ="500.0f"
+    ColR="0.0f"
+    ColG="0.0f"
+    ColB="0.0f" />
+  <Credits>"Fallen Angels (Live from Alive &amp; Burning)"
+Performed by Black Veil Brides
+Written by Ashley Purdy, Jeremy Ferguson, Joshua Abraham, Andrew Biersack, and Luke Walker
+Published by Pulse Recording Songs (ASCAP), Sex With You Would Be Nice Music (Walker), WB Music Corp. (ASCAP) on behalf of Atlanic Records (ASCAP) Pub Designee and Ashley Purdy Music (Purdy), Jinxxed For Life Music (Ferguson), Faroosh Music (Abraham) and Abiersack (Biersack)
+Courtesy of Republic Records/Lava Music under license from Universal Music Enterprises
+Used by Permission. All Rights Reserved.</Credits>
+</Track>

@@ -1,0 +1,56 @@
+﻿<Track
+  id="001531"
+  artist="A Day To Remember"
+  trackname="Right Back At It Again"
+  countInDurationBars="1">
+  <Video
+    hasVideo="false"
+    musicStartTime="0" />
+  <Highway
+    newbeginner="0.4"
+    neweasy="0.55"
+    newmedium="0.7"
+    newhard="1.0"
+    newexpert="1.1" />
+  <CustomModel
+    ArrayModel="Models/highway_3ln_led_zep.xmf"
+    TraditionalModel="Models/highway_5ln_ledzep.xmf" />
+  <Light
+    index="0"
+    PosX="120.0f"
+    PosY="70.0f"
+    PosZ="280.0f"
+    ColR="0.635f"
+    ColG="0.925f"
+    ColB="0.925f" />
+  <Light
+    index="1"
+    PosX="50.0f"
+    PosY="90.0f"
+    PosZ="-50.0f"
+    ColR="0.635f"
+    ColG="0.925f"
+    ColB="0.925f" />
+  <Light
+    index="2"
+    PosX="0.0f"
+    PosY="70.0f"
+    PosZ="-30.0f"
+    ColR="0.757f"
+    ColG="0.682f"
+    ColB="0.588f" />
+  <Light
+    index="3"
+    PosX="500.0f"
+    PosY="500.0f"
+    PosZ="500.0f"
+    ColR="0.0f"
+    ColG="0.0f"
+    ColB="0.0f" />
+  <Credits>"Right Back At It Again"
+Performed by A Day To Remember
+Written by Thomas Huey Denny Jr., Jeremy Wade McKinnon, Andrew Robert Wade, and Neil S Westfall
+Published by Tom Denny Music administered by Music of the Mothership, Jeremy McKinnon Music, Monsterman Jungle Jamz, and Neil Westfall Music
+Courtesy of Caroline Recordings under license from Universal Music Enterprises
+Used by Permission. All Rights Reserved.</Credits>
+</Track>

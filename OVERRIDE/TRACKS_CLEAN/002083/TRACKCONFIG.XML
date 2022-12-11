@@ -1,0 +1,67 @@
+﻿<Track
+  id="002083"
+  artist="La Guns"
+  trackname="Rip And Tear"
+  countInDurationBars="1">
+  <Video
+    hasVideo="false"
+    musicStartTime="0" />
+  <!-- highwayOpacityMultiplier: You can have values between 0.0 - FLT_MAX (2^(2^7) = 3.4 x 10^38)
+			 Any value < 1.0 should make the highway MORE TRANSPARENT. 
+			 Any value > 1.0 should make the highway LESS TRANSPARENT -->
+  <Highway
+    newbeginner="0.4"
+    neweasy="0.65"
+    newmedium="0.82"
+    newhard="1.0"
+    newexpert="1.4"
+    highwayOpacityMultiplier="1.0"
+    touchguitareasy="0.65"
+    touchguitarmedium="0.82"
+    touchguitarhard="1.0"
+    touchguitarexpert="1.4"
+    touchdrumeasy="0.65"
+    touchdrummedium="0.82"
+    touchdrumexpert="1.4" />
+  <CustomModel
+    ArrayModel="Models/highway_3ln_led_zep.xmf"
+    TraditionalModel="Models/highway_5ln_ledzep.xmf" />
+  <Light
+    index="0"
+    PosX="120.0f"
+    PosY="70.0f"
+    PosZ="280.0f"
+    ColR="0.635f"
+    ColG="0.925f"
+    ColB="0.925f" />
+  <Light
+    index="1"
+    PosX="50.0f"
+    PosY="90.0f"
+    PosZ="-50.0f"
+    ColR="0.635f"
+    ColG="0.925f"
+    ColB="0.925f" />
+  <Light
+    index="2"
+    PosX="0.0f"
+    PosY="70.0f"
+    PosZ="-30.0f"
+    ColR="0.757f"
+    ColG="0.682f"
+    ColB="0.588f" />
+  <Light
+    index="3"
+    PosX="500.0f"
+    PosY="500.0f"
+    PosZ="500.0f"
+    ColR="0.0f"
+    ColG="0.0f"
+    ColB="0.0f" />
+  <Credits>"Rip and Tear"
+Performed by L.A. Guns
+Written by Steve Riley, Kelly Nickels, Philip Lewis, Mick Cripps, and Tracii Gunns
+Published by Universal - Songs of Polygram International Publishing, Inc. on behalf of itself and Al Snug Music
+Courtesy of Polydor Records under license from Universal Music Enterprises
+Used by Permission. All Rights Reserved.</Credits>
+</Track>

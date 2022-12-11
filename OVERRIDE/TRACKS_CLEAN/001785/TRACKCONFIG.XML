@@ -1,0 +1,55 @@
+<Track
+  id="001495"
+  artist="The Gaslight Anthem"
+  trackname="Rollin' And Tumblin'"
+  countInDurationBars="1">
+  <Video
+    hasVideo="false"
+    musicStartTime="0" />
+  <Highway
+					newbeginner="0.4"
+				
+    neweasy="0.55"
+    newmedium="0.7"
+    newhard="0.8"
+    newexpert="1.0"
+    traditionaleasy="0.5"
+    traditionalmedium="0.7"
+    traditionalhard="0.85"
+    traditionalexpert="0.9" />
+  <CustomModel
+    ArrayModel="Models/highway_3ln_led_zep.xmf"
+    TraditionalModel="Models/highway_5ln_ledzep.xmf" />
+  <Light
+    index="0"
+    PosX="120.0f"
+    PosY="70.0f"
+    PosZ="280.0f"
+    ColR="0.635f"
+    ColG="0.925f"
+    ColB="0.925f" />
+  <Light
+    index="1"
+    PosX="50.0f"
+    PosY="90.0f"
+    PosZ="-50.0f"
+    ColR="0.635f"
+    ColG="0.925f"
+    ColB="0.925f" />
+  <Light
+    index="2"
+    PosX="0.0f"
+    PosY="70.0f"
+    PosZ="-30.0f"
+    ColR="0.757f"
+    ColG="0.682f"
+    ColB="0.588f" />
+  <Light
+    index="3"
+    PosX="500.0f"
+    PosY="500.0f"
+    PosZ="500.0f"
+    ColR="0.0f"
+    ColG="0.0f"
+    ColB="0.0f" />
+</Track>

@@ -1,0 +1,61 @@
+﻿<Track
+  id="001508"
+  artist="Interpol"
+  trackname="All The Rage Back Home"
+  countInDurationBars="1">
+  <Video
+    hasVideo="false"
+    musicStartTime="0" />
+  <Highway
+    newbeginner="0.4"
+    neweasy="0.55"
+    newmedium="0.7"
+    newhard="0.8"
+    newexpert="1.1"
+    traditionaleasy="0.5"
+    traditionalmedium="0.7"
+    traditionalhard="0.85"
+    traditionalexpert="0.9"
+    highwayTransparency="0.5" />
+  <CustomModel
+    ArrayModel="Models/highway_3ln_led_zep.xmf"
+    TraditionalModel="Models/highway_5ln_ledzep.xmf" />
+  <Light
+    index="0"
+    PosX="120.0f"
+    PosY="70.0f"
+    PosZ="280.0f"
+    ColR="0.635f"
+    ColG="0.925f"
+    ColB="0.925f" />
+  <Light
+    index="1"
+    PosX="50.0f"
+    PosY="90.0f"
+    PosZ="-50.0f"
+    ColR="0.635f"
+    ColG="0.925f"
+    ColB="0.925f" />
+  <Light
+    index="2"
+    PosX="0.0f"
+    PosY="70.0f"
+    PosZ="-30.0f"
+    ColR="0.757f"
+    ColG="0.682f"
+    ColB="0.588f" />
+  <Light
+    index="3"
+    PosX="500.0f"
+    PosY="500.0f"
+    PosZ="500.0f"
+    ColR="0.0f"
+    ColG="0.0f"
+    ColB="0.0f" />
+  <Credits>"All The Rage Back Home"
+Performed by Interpol
+Written by Samuel Fogarino, Daniel Kessler, and Paul Banks
+Published by Friend Or Faux Music, Iron Men Wooden Ships Music, and Idle Worship Music administered by Kobalt Music Publishing America, Inc.
+Courtesy of Matador Records
+Used by Permission. All Rights Reserved.</Credits>
+</Track>

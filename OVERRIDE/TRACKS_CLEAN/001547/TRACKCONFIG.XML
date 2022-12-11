@@ -1,0 +1,57 @@
+﻿<Track
+  id="001547"
+  artist="All Time Low"
+  trackname="Merry Christmas, Kiss My Ass"
+  countInDurationBars="1">
+  <Video
+    hasVideo="false"
+    musicStartTime="0" />
+  <Highway
+    newbeginner="0.4"
+    neweasy="0.55"
+    newmedium="0.7"
+    newhard="0.95"
+    newexpert="1.0"
+    highwayTransparency="0.5" />
+  <CustomModel
+    ArrayModel="Models/highway_3ln_led_zep.xmf"
+    TraditionalModel="Models/highway_5ln_ledzep.xmf" />
+  <Light
+    index="0"
+    PosX="120.0f"
+    PosY="70.0f"
+    PosZ="280.0f"
+    ColR="0.635f"
+    ColG="0.925f"
+    ColB="0.925f" />
+  <Light
+    index="1"
+    PosX="50.0f"
+    PosY="90.0f"
+    PosZ="-50.0f"
+    ColR="0.635f"
+    ColG="0.925f"
+    ColB="0.925f" />
+  <Light
+    index="2"
+    PosX="0.0f"
+    PosY="70.0f"
+    PosZ="-30.0f"
+    ColR="0.757f"
+    ColG="0.682f"
+    ColB="0.588f" />
+  <Light
+    index="3"
+    PosX="500.0f"
+    PosY="500.0f"
+    PosZ="500.0f"
+    ColR="0.0f"
+    ColG="0.0f"
+    ColB="0.0f" />
+  <Credits>"Merry Christmas, Kiss My Ass"
+Performed by All Time Low
+Written by Alexander William Gaskarth, Alexei Constantine Misoul, and Dan Steven Book
+Published by Songs Of Universal, Inc. on behalf of itself and All Time Low Music, Dan Book Music (BMI), and Alexei Misoul Music (BMI)
+Courtesy of DGC Records under license from Universal Music Enterprises
+Used by Permission. All Rights Reserved.</Credits>
+</Track>

@@ -1,0 +1,56 @@
+﻿<Track
+  id="001477"
+  artist="White Denim"
+  trackname="At Night In Dreams"
+  countInDurationBars="1">
+  <Video
+    hasVideo="false"
+    musicStartTime="0" />
+  <Highway
+    newbeginner="0.4"
+    neweasy="0.6"
+    newmedium="0.8"
+    newhard="1.0"
+    newexpert="1.25" />
+  <CustomModel
+    ArrayModel="Models/highway_3ln_led_zep.xmf"
+    TraditionalModel="Models/highway_5ln_ledzep.xmf" />
+  <Light
+    index="0"
+    PosX="120.0f"
+    PosY="70.0f"
+    PosZ="280.0f"
+    ColR="0.635f"
+    ColG="0.925f"
+    ColB="0.925f" />
+  <Light
+    index="1"
+    PosX="50.0f"
+    PosY="90.0f"
+    PosZ="-50.0f"
+    ColR="0.635f"
+    ColG="0.925f"
+    ColB="0.925f" />
+  <Light
+    index="2"
+    PosX="0.0f"
+    PosY="70.0f"
+    PosZ="-30.0f"
+    ColR="0.757f"
+    ColG="0.682f"
+    ColB="0.588f" />
+  <Light
+    index="3"
+    PosX="500.0f"
+    PosY="500.0f"
+    PosZ="500.0f"
+    ColR="0.0f"
+    ColG="0.0f"
+    ColB="0.0f" />
+  <Credits>"At Night In Dreams"
+Performed by White Denim
+Written by Joshua Alan Block, Austin Michael Jenkins, James I Petralli, and Steven A Terebecki
+Published by Joshua Block Music (ASCAP), Steve Terebecki (ASCAP), Bop English (ASCAP), and Downtown DLJ Songs (ASCAP)
+Courtesy of Downtown Records
+Used by Permission. All Rights Reserved.</Credits>
+</Track>

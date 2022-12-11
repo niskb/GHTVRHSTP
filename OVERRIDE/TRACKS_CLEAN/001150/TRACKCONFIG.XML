@@ -1,0 +1,58 @@
+﻿<Track
+  id="1150"
+  artist=""
+  trackname=""
+  intensity="3">
+  <Highway
+    newbeginner="0.4"
+    neweasy="0.55"
+    newmedium="0.75"
+    newhard="0.85"
+    newexpert="1.2"
+    traditionaleasy="0.5"
+    traditionalmedium="0.7"
+    traditionalhard="0.85"
+    traditionalexpert="0.9" />
+  <CustomModel
+    ArrayModel="Models/highway_3ln_led_zep.xmf"
+    TraditionalModel="Models/highway_5ln_ledzep.xmf" />
+  <Light
+    index="0"
+    PosX="120.0f"
+    PosY="70.0f"
+    PosZ="280.0f"
+    ColR="0.635f"
+    ColG="0.925f"
+    ColB="0.925f" />
+  <Light
+    index="1"
+    PosX="50.0f"
+    PosY="90.0f"
+    PosZ="-50.0f"
+    ColR="0.635f"
+    ColG="0.925f"
+    ColB="0.925f" />
+  <Light
+    index="2"
+    PosX="0.0f"
+    PosY="70.0f"
+    PosZ="-30.0f"
+    ColR="0.757f"
+    ColG="0.682f"
+    ColB="0.588f" />
+  <Light
+    index="3"
+    PosX="500.0f"
+    PosY="500.0f"
+    PosZ="500.0f"
+    ColR="0.0f"
+    ColG="0.0f"
+    ColB="0.0f" />
+  <Credits>"Everybody Talks"
+Performed by Neon Trees
+Written by Tyler Glenn and Timothy Pagnotta
+Published by Downtown DMP Songs (BMI), and Marvin the Terrible / Songs of Pulse Recording administered by Pulse Publishing Administration, LLC
+Courtesy of Mercury Records under license from Universal Music Enterprises
+Used by Permission. All Rights Reserved.
+</Credits>
+</Track>
