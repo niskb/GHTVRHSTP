@@ -1,23 +1,23 @@
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.OutputStream;
 import java.util.Scanner;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.transform.Transformer;
-import javax.xml.transform.TransformerConfigurationException;
-import javax.xml.transform.TransformerException;
-import javax.xml.transform.TransformerFactory;
-import javax.xml.transform.dom.DOMSource;
-import javax.xml.transform.stream.StreamResult;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
+import org.w3c.dom.bootstrap.DOMImplementationRegistry;
+import org.w3c.dom.ls.DOMImplementationLS;
+import org.w3c.dom.ls.LSOutput;
+import org.w3c.dom.ls.LSSerializer;
 import org.xml.sax.SAXException;
 
 public class Test {
@@ -58,7 +58,7 @@ public class Test {
 		// We need to parse each file XML
 
 //		parser();
-		
+
 		Scanner scanner = new Scanner(System.in);
 		System.out.println("Negative values for slower Highway speed.");
 		System.out.println("Positive values for faster Highway speed.");
@@ -68,7 +68,7 @@ public class Test {
 		int percentageInput = scanner.nextInt();
 		parseAllByPercent(percentageInput);
 		scanner.close();
-		
+
 	}
 
 	private static void printFileName(File file, int level) {
@@ -171,13 +171,12 @@ public class Test {
 
 			String newexpert = highwayElement.getAttribute("newexpert");
 			System.out.println("newexpert: " + newexpert);
-			
+
 			// Modify Element
 			highwayElement.setAttribute("newexpert", "2.0");
-			
+
 			newexpert = highwayElement.getAttribute("newexpert");
 			System.out.println("Modified newexpert: " + newexpert);
-			
 
 		} catch (ParserConfigurationException e) {
 			e.printStackTrace();
@@ -190,9 +189,9 @@ public class Test {
 			System.out.println("Fail");
 		}
 	}
-	
+
 	private static void parseAllByPercent(int percent) {
-		for(int i = 0; i < directories.length; i++) {
+		for (int i = 0; i < directories.length; i++) {
 			DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 			DocumentBuilder builder;
 			try {
@@ -200,31 +199,55 @@ public class Test {
 				File file = new File(directories[0]);
 				Document doc = builder.parse(file);
 				doc.getDocumentElement().normalize();
-				
+
 				// Get Track element
 				NodeList children = doc.getChildNodes();
 				Element trackElement = (Element) children.item(0);
-				
+
 				// Get Track Highway Child element
 				NodeList trackChildren = trackElement.getChildNodes();
 				Element highwayElement = (Element) trackChildren.item(1);
-				
+
 				// Modify Element Highway Speed
-				highwayElement.setAttribute("newbeginner", String.valueOf((percent/100.0) + 1));
-				highwayElement.setAttribute("neweasy", String.valueOf((percent/100.0) + 1));
-				highwayElement.setAttribute("newmedium", String.valueOf((percent/100.0) + 1));
-				highwayElement.setAttribute("newhard", String.valueOf((percent/100.0) + 1));
-				highwayElement.setAttribute("newexpert", String.valueOf((percent/100.0) + 1));
-				
+				highwayElement.setAttribute("newbeginner",
+						String.valueOf((percent / 100.0) + Double.valueOf(highwayElement.getAttribute("newbeginner"))));
+				highwayElement.setAttribute("neweasy",
+						String.valueOf((percent / 100.0) + Double.valueOf(highwayElement.getAttribute("neweasy"))));
+				highwayElement.setAttribute("newmedium",
+						String.valueOf((percent / 100.0) + Double.valueOf(highwayElement.getAttribute("newmedium"))));
+				highwayElement.setAttribute("newhard",
+						String.valueOf((percent / 100.0) + Double.valueOf(highwayElement.getAttribute("newhard"))));
+				highwayElement.setAttribute("newexpert",
+						String.valueOf((percent / 100.0) + Double.valueOf(highwayElement.getAttribute("newexpert"))));
+
 				// Now recompile XML to a new File with the new data
-				String newFileDirectoryPath = directories[0].replaceAll("TRACKS_CLEAN", "TRACKS");
+				String newFileDirectoryPath = directories[i].replaceAll("TRACKS_CLEAN", "TRACKS");
 				newFileDirectoryPath = newFileDirectoryPath.substring(newFileDirectoryPath.indexOf("OVERRIDE\\TRACKS"));
-				
+				newFileDirectoryPath = newFileDirectoryPath.replace('\\', '/');
+
+				String filePath = newFileDirectoryPath.substring(0, newFileDirectoryPath.indexOf("/TRACKCONFIG.XML"));
+
+				// Check if directory does not exist
+
+				File directory = new File(filePath);
+				if (!directory.exists()) {
+					directory.mkdirs();
+				}
+
+				System.out.println("File Path: " + filePath);
 				System.out.println("Writing to: " + newFileDirectoryPath);
-				
+
 				// Now actually write the modified XML to a new File
-				
-				
+
+				DOMImplementationLS ls = (DOMImplementationLS) DOMImplementationRegistry.newInstance()
+						.getDOMImplementation("LS");
+				LSSerializer serializer = ls.createLSSerializer();
+				serializer.getDomConfig().setParameter("format-pretty-print", true);
+				LSOutput output = ls.createLSOutput();
+
+				OutputStream ostream = new FileOutputStream(newFileDirectoryPath);
+				output.setByteStream(ostream);
+				serializer.write(doc, output);
 
 			} catch (ParserConfigurationException e) {
 				e.printStackTrace();
@@ -233,6 +256,18 @@ public class Test {
 				e.printStackTrace();
 				System.out.println("Fail");
 			} catch (IOException e) {
+				e.printStackTrace();
+				System.out.println("Fail");
+			} catch (ClassNotFoundException e) {
+				e.printStackTrace();
+				System.out.println("Fail");
+			} catch (InstantiationException e) {
+				e.printStackTrace();
+				System.out.println("Fail");
+			} catch (IllegalAccessException e) {
+				e.printStackTrace();
+				System.out.println("Fail");
+			} catch (ClassCastException e) {
 				e.printStackTrace();
 				System.out.println("Fail");
 			}
