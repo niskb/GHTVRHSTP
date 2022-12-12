@@ -130,7 +130,6 @@ public class Test {
 	}
 
 	private static void parser() {
-
 		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 		DocumentBuilder builder;
 		try {
@@ -192,33 +191,40 @@ public class Test {
 
 	private static void parseAllByPercent(int percent) {
 		for (int i = 0; i < directories.length; i++) {
-			DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-			DocumentBuilder builder;
 			try {
-				builder = factory.newDocumentBuilder();
-				File file = new File(directories[0]);
+				DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+				DocumentBuilder builder = factory.newDocumentBuilder();
+				File file = new File(directories[i]);
 				Document doc = builder.parse(file);
 				doc.getDocumentElement().normalize();
 
-				// Get Track element
-				NodeList children = doc.getChildNodes();
-				Element trackElement = (Element) children.item(0);
+				// Get Track and Highway elements/attributes
+				Element trackElement = doc.getDocumentElement();
 
-				// Get Track Highway Child element
-				NodeList trackChildren = trackElement.getChildNodes();
-				Element highwayElement = (Element) trackChildren.item(1);
+				NodeList trackList = trackElement.getChildNodes();
 
-				// Modify Element Highway Speed
-				highwayElement.setAttribute("newbeginner",
-						String.valueOf((percent / 100.0) + Double.valueOf(highwayElement.getAttribute("newbeginner"))));
+				Element highwayElement = null;
+				for (int j = 0; j < trackList.getLength(); j++) {
+					String nodeName = trackList.item(j).getNodeName();
+					if (nodeName.equals("Highway")) {
+						highwayElement = (Element) trackList.item(j);
+					} else {
+						continue;
+					}
+				}
+
+				// Update Data
+
+				highwayElement.setAttribute("newbeginner", String
+						.valueOf((percent / 100.0) + Double.parseDouble(highwayElement.getAttribute("newbeginner"))));
 				highwayElement.setAttribute("neweasy",
-						String.valueOf((percent / 100.0) + Double.valueOf(highwayElement.getAttribute("neweasy"))));
-				highwayElement.setAttribute("newmedium",
-						String.valueOf((percent / 100.0) + Double.valueOf(highwayElement.getAttribute("newmedium"))));
+						String.valueOf((percent / 100.0) + Double.parseDouble(highwayElement.getAttribute("neweasy"))));
+				highwayElement.setAttribute("newmedium", String
+						.valueOf((percent / 100.0) + Double.parseDouble(highwayElement.getAttribute("newmedium"))));
 				highwayElement.setAttribute("newhard",
-						String.valueOf((percent / 100.0) + Double.valueOf(highwayElement.getAttribute("newhard"))));
-				highwayElement.setAttribute("newexpert",
-						String.valueOf((percent / 100.0) + Double.valueOf(highwayElement.getAttribute("newexpert"))));
+						String.valueOf((percent / 100.0) + Double.parseDouble(highwayElement.getAttribute("newhard"))));
+				highwayElement.setAttribute("newexpert", String
+						.valueOf((percent / 100.0) + Double.parseDouble(highwayElement.getAttribute("newexpert"))));
 
 				// Now recompile XML to a new File with the new data
 				String newFileDirectoryPath = directories[i].replaceAll("TRACKS_CLEAN", "TRACKS");
@@ -248,7 +254,7 @@ public class Test {
 				OutputStream ostream = new FileOutputStream(newFileDirectoryPath);
 				output.setByteStream(ostream);
 				serializer.write(doc, output);
-
+				ostream.close();
 			} catch (ParserConfigurationException e) {
 				e.printStackTrace();
 				System.out.println("Fail");
